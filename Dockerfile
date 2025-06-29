@@ -10,7 +10,7 @@ COPY . /build/
 
 RUN go build -v
 
-FROM alpine:3.21 AS RUN
+FROM alpine:3.21 AS run
 
 WORKDIR /usr/bin
 COPY --from=build /build/brightsky-temp .
