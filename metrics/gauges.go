@@ -7,11 +7,11 @@ import (
 
 var (
 	Temperature = promauto.NewGauge(prometheus.GaugeOpts{
-		Name: "bs_curr_temperature",
+		Name: "curr_temperature",
 		Help: "Current Temperature",
 	})
 	RelativeHumidity = promauto.NewGauge(prometheus.GaugeOpts{
-		Name: "bs_curr_relative_humidity",
+		Name: "curr_relative_humidity",
 		Help: "Current Relative Humidity",
 	})
 	CloudCover = promauto.NewGauge(prometheus.GaugeOpts{
