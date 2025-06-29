@@ -1,0 +1,11 @@
+services:
+  brightsky-temp:
+    image: mlsn/brightsky-temp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - LATITUDE=52.520008
+      - LONGITUDE=13.404954
+    ports:
+      - "8080:8080"
