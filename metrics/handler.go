@@ -11,6 +11,7 @@ import (
 func Handler(lat, lon float64) http.HandlerFunc {
 	ph := promhttp.Handler()
 	return func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("Handling data request from %s", r.RemoteAddr)
 		curr_val, err := brightsky.Data(lat, lon)
 		if err != nil {
 			log.Printf("Error retrieving data: %s", err.Error())
