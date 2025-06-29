@@ -32,6 +32,5 @@ func force[T any](val *T) (res T) {
 	if val == nil {
 		return
 	}
-
 	return *val
 }
