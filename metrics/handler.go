@@ -23,6 +23,13 @@ func Handler(lat, lon float64) http.HandlerFunc {
 		CloudCover.Set(force(curr_val.Weather.CloudCover))
 		PressureMSL.Set(force(curr_val.Weather.PressureMSL))
 		WindSpeed.Set(force(curr_val.Weather.WindSpeed10))
+		WindDirection.Set(float64(force(curr_val.Weather.WindDirection10)))
+		WindGustSpeed.Set(force(curr_val.Weather.WindGustSpeed10))
+		WindGustDirection.Set(float64(force(curr_val.Weather.WindGustDirection10)))
+		Precipitation.Set(force(curr_val.Weather.Precipitation10))
+		DewPoint.Set(force(curr_val.Weather.DewPoint))
+		SolarIrradiation.Set(force(curr_val.Weather.Solar10))
+		SunshineTime.Set(force(curr_val.Weather.Sunshine30))
 
 		ph.ServeHTTP(w, r)
 	}
